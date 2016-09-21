@@ -1,0 +1,45 @@
+/*引入外部文件*/
+.header {
+  color: #e92322;
+}
+.banner {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.footer {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+/*嵌套：这种注释会编译到css文件中*/
+.nav {
+  background-color: #cccccc;
+}
+.nav .h1 {
+  font-size: 20px;
+}
+.nav p {
+  font-size: 12px;
+}
+.nav li {
+  float: left;
+}
+.nav li .active {
+  text-decoration: none;
+  color: #e92322;
+}
+.nav a {
+  text-decoration: none;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+/*运算符的使用*/
+.txtInput {
+  border: solid #e92322 3px;
+  color: #fa3433;
+}
+/*函数的使用*/
+.btn {
+  color: #d53647;
+}

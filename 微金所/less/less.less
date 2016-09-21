@@ -1,0 +1,55 @@
+/*引入外部文件*/
+@import "var";
+
+.header{
+  color:@mainColor;
+}
+//混入：这种注释不会编译到css文件中
+.round-corners(@radius:5px){
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+.defaultBorder(){
+  border:1px solid #ccc;
+}
+
+.banner{
+  .round-corners;
+}
+.footer{
+  .round-corners(10px);
+  .defaultBorder();
+}
+/*嵌套：这种注释会编译到css文件中*/
+.nav{
+  background-color: #cccccc;
+  .h1{
+    font-size: 20px;
+  }
+  p{
+    font-size: 12px;
+  }
+  li{
+    float: left;
+    .active{
+      text-decoration: none;
+      color: @mainColor;
+    }
+  }
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+/*运算符的使用*/
+.txtInput{
+  border: solid @mainColor (@thinBorder*3);
+  color: (@mainColor + #111);
+}
+
+/*函数的使用*/
+.btn{
+  color: darken(@mainColor,10%)+#123;
+}
